@@ -1,8 +1,5 @@
-<p align="center">
-  <img src="assets/orbitai-banner.png" alt="OrbitAI Banner" width="600" />
-</p>
 
-<h1 align="center">🪐 OrbitAI Governance Platform</h1>
+<h1 align="center">🪐 AI Assistant Governance Platform</h1>
 
 <p align="center">
   <strong>An enterprise-grade AI governance backend with RBAC, RAG-powered assistant & production resilience</strong>
@@ -43,7 +40,7 @@
 </td>
 <td width="50%">
 
-### 🤖 AI Orbit Assistant
+### 🤖 AI Assistant
 - **RAG Architecture** with context retrieval
 - Intent recognition & workflow orchestration
 - Confirmation gates for destructive actions
@@ -83,7 +80,7 @@
 ```mermaid
 flowchart TD
     A[🧑‍💻 User Query] --> B[🔐 API Gateway / Auth & Rate Limit]
-    B --> C[🤖 Orbit Assistant]
+    B --> C[🤖 AI Assistant]
     C --> D[🧠 NLU Engine]
     D --> E[🎯 Intent Validator]
     E -->|Valid Intent| F[📚 RAG Retriever]
@@ -117,7 +114,7 @@ flowchart TD
 
 ```mermaid
 mindmap
-  root((🪐 OrbitAI Platform))
+  root((🪐 AI Assistant Platform))
     🔐 Security Layer
       JWT Authentication
       SlowAPI Rate Limiting
@@ -162,7 +159,7 @@ mindmap
 ```bash
 # Clone the repository
 git clone <repo-url>
-cd orbitai
+cd ai-assistant
 
 # Copy environment file
 cp .env.example .env
@@ -206,7 +203,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```bash
 curl -X POST http://localhost:8000/api/v1/auth/login \
   -H "Content-Type: application/json" \
-  -d '{"email": "nick.fury@shield.gov", "password": "password123"}'
+  -d '{"email": "<your_email>", "password": "<your_password>"}'
 ```
 
 #### Create Project (Admin / Manager)
@@ -235,7 +232,7 @@ curl -X POST http://localhost:8000/api/v1/tasks \
   }'
 ```
 
-#### Ask Orbit Assistant
+#### Ask Assistant
 ```bash
 curl -X POST http://localhost:8000/api/v1/assistant/chat \
   -H "Authorization: Bearer <token>" \
@@ -250,7 +247,7 @@ curl -X POST http://localhost:8000/api/v1/assistant/chat \
 ## 📁 Project Structure
 
 ```
-orbitai/
+ai-assistant/
 ├── app/
 │   ├── core/
 │   │   ├── database/
@@ -460,7 +457,6 @@ Client → API → Redis (Cache-Aside + Rate Limiting) → PostgreSQL
 ## 👨‍💻 Developed by
 
 <div align="center">
-  <!-- Place your profile image at assets/sudheer.png -->
   <a href="https://www.linkedin.com/in/sudheerkonduboina/">
     <img src="assets/sudheer.png" width="120" style="border-radius: 50%;" alt="Sudheer Konduboina" />
   </a>
